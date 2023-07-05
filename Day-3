@@ -1,0 +1,40 @@
+ const data = {
+  name: 'John Doe',
+  age: 25,
+  city: 'New York'
+};
+
+// for-in loop
+console.log('--- for-in loop ---');
+for (let key in data) {
+  console.log(`${key}: ${data[key]}`);
+}
+
+// for-of loop (only works with iterable objects, not JSON objects)
+// You can convert the JSON object to an array using Object.entries()
+console.log('--- for-of loop ---');
+const dataArray = Object.entries(data);
+for (let [key, value] of dataArray) {
+  console.log(`${key}: ${value}`);
+}
+
+// for-of loop (works with JSON objects if using Object.keys())
+console.log('--- for-of loop with Object.keys() ---');
+const keys = Object.keys(data);
+for (let key of keys) {
+  console.log(`${key}: ${data[key]}`);
+}
+
+// forEach loop (only works with arrays, not JSON objects)
+console.log('--- forEach loop ---');
+// Convert the JSON object to an array using Object.entries() or Object.values()
+Object.entries(data).forEach(([key, value]) => {
+  console.log(`${key}: ${value}`);
+});
+
+// If you want to iterate over the values of a JSON object, you can use Object.values()
+console.log('--- for-of loop with Object.values() ---');
+const values = Object.values(data);
+for (let value of values) {
+  console.log(value);
+}
